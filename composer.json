@@ -1,5 +1,6 @@
 {
-    "name": "dmitry/php-project-lvl1",
+    "name": "dmitryzlotin/php-project-lvl1",
+    "bin": ["bin/brain-games"],
     "authors": [
         {
             "name": "Dmitry Zlotin",
@@ -7,8 +8,5 @@
         }
     ],
     "require": {
-	    "bin": [
-   		 "bin/brain-games"
-  		]
     }
 }
