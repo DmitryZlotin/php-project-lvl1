@@ -1,0 +1,14 @@
+{
+    "name": "dmitry/php-project-lvl1",
+    "authors": [
+        {
+            "name": "Dmitry Zlotin",
+            "email": "dmitryzlotin@gmail.com"
+        }
+    ],
+    "require": {
+	    "bin": [
+   		 "bin/brain-games"
+  		]
+    }
+}
