@@ -6,6 +6,9 @@
         "src/cli.php"
       ]
     },
+    "scripts": {
+      "phpcs": "phpcs"
+    },
     "authors": [
         {
             "name": "Dmitry Zlotin",
@@ -13,6 +16,7 @@
         }
     ],
     "require": {
-	    "wp-cli/php-cli-tools":"v0.11.11"
+	    "wp-cli/php-cli-tools":"v0.11.11",
+        "squizlabs/php_codesniffer": "^3.4"
     }
 }
