@@ -7,7 +7,11 @@
       ]
     },
     "scripts": {
+<<<<<<< HEAD
       "phpcs": "phpcs"
+=======
+      "phpcs": "./vendor/squizlabs/php_codesniffer/bin/phpcs"
+>>>>>>> 92f74bed0b3512cb197de2722b158c87db638530
     },
     "authors": [
         {
