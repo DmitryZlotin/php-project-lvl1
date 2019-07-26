@@ -7,7 +7,7 @@
       ]
     },
     "scripts": {
-      "phpcs": "./vendor/bin/phpcs"
+      "phpcs": "./vendor/bin/phpcbf"
     },
     "authors": [
         {
