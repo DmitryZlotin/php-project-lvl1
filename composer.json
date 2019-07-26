@@ -7,7 +7,7 @@
       ]
     },
     "scripts": {
-      "phpcs": "phpcs"
+      "phpcs": "./vendor/bin/phpcs"
     },
     "authors": [
         {
