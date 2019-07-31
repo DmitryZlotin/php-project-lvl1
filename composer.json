@@ -1,9 +1,11 @@
 {
     "name": "dmitryzlotin/php-project-lvl1",
-    "bin": ["bin/brain-games"],
+    "bin": ["bin/brain-even"],
     "autoload": {
       "files": [
-        "src/cli.php"
+        "src/cli.php",
+        "src/engine.php",
+        "src/games/even.php"
       ]
     },
     "scripts": {
