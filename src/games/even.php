@@ -2,7 +2,6 @@
 
 namespace BrainGames\Games\even;
 
-//test
 function getQuestion()
 {
     $min = 1;
