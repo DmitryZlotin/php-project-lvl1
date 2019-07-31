@@ -1,6 +1,6 @@
 {
     "name": "dmitryzlotin/php-project-lvl1",
-    "stability": "stable",
+    "stability": "1.0.0",
     "version": "0.1.0",
     "bin": ["bin/brain-even"],
     "autoload": {
