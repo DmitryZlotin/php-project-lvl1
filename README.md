@@ -7,3 +7,4 @@ PATH=$PATH:~/.config/composer/vendor/bin
 export PATH
 brain-even
 brain-calc
+brain-gcd

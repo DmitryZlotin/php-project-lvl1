@@ -13,6 +13,7 @@ function getQuestion()
     $correctAnswer = getAnswer($first, $second, $sign);
     return ['question' => $quest, 'correctAnswer' => $correctAnswer];
 }
+
 function getSpecification()
 {
     $specification = ['regulations' => "What is the result of the expression?",
