@@ -11,11 +11,11 @@ function startGame($fun)
 {
     line('Welcome to the Brain Game!');
     $specification = $fun;
-    line($specification . "\n");
+    line($specification['regulations'] . "\n");
     $name = prompt('May I have your name?');
     line("Hello, %s!\n", $name);
     for ($i = 0; $i < 3; $i++) {
-        $quest = getQuestion();
+        $quest = $specification['quests'][$i];
         $playerAnswer = getPlayerAnswer($quest['question']);
         $correctAnswer = $quest['correctAnswer'];
         if (!checkAnswer($correctAnswer, $playerAnswer)) {

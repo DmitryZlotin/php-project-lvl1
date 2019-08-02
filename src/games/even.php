@@ -13,5 +13,12 @@ function getQuestion()
 
 function getSpecification()
 {
-    return "Answer \"yes\" if number even otherwise answer \"no\".";
+    $specification = ['regulations' => "Answer \"yes\" if number even otherwise answer \"no\".",
+                        'quests' => []];
+    for ($i = 0; $i< 3; $i++) {
+        $fun = getQuestion();
+        $specification['quests'][$i] = $fun;
+    }
+
+    return $specification;
 }
