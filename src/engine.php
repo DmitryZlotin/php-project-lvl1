@@ -21,7 +21,7 @@ function startGame($fun)
         if (!checkAnswer($correctAnswer, $playerAnswer)) {
             line("\"{$playerAnswer}\" is wrong answer;(. Correct answer was \"{$correctAnswer}\"");
             line("Let's try again, {$name}!");
-            exit;
+            exit("Fail answer");
         }
         line("Correct!");
     }
