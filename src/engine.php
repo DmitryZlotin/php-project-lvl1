@@ -19,9 +19,9 @@ function startGame($fun)
         $playerAnswer = getPlayerAnswer($quest['question']);
         $correctAnswer = $quest['correctAnswer'];
         if (!checkAnswer($correctAnswer, $playerAnswer)) {
-            line("\"{$playerAnswer}\" is wrong answer;(. Correct answer was {$correctAnswer}");
+            line("\"{$playerAnswer}\" is wrong answer;(. Correct answer was \"{$correctAnswer}\"");
             line("Let's try again, {$name}!");
-            break;
+            exit;
         }
         line("Correct!");
     }
