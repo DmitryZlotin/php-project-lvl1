@@ -5,6 +5,7 @@
 composer global require dmitryzlotin/php-project-lvl1
 PATH=$PATH:~/.config/composer/vendor/bin
 export PATH
+
 brain-even
 brain-calc
 brain-gcd
