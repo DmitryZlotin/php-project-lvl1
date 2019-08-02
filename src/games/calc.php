@@ -17,7 +17,7 @@ function getSpecification()
 {
     $specification = ['regulations' => "What is the result of the expression?",
                         'quests' => []];
-    for ($i = 0; $i< 3; $i++) {
+    for ($i = 0; $i < 3; $i++) {
         $fun = getQuestion();
         $specification['quests'][$i] = $fun;
     }

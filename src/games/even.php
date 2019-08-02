@@ -15,7 +15,7 @@ function getSpecification()
 {
     $specification = ['regulations' => "Answer \"yes\" if number even otherwise answer \"no\".",
                         'quests' => []];
-    for ($i = 0; $i< 3; $i++) {
+    for ($i = 0; $i < 3; $i++) {
         $fun = getQuestion();
         $specification['quests'][$i] = $fun;
     }
