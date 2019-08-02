@@ -7,10 +7,10 @@ use function BrainGames\games\even\getSpecification;
 use function \cli\line;
 use function \cli\prompt;
 
-function startGame()
+function startGame($fun)
 {
     line('Welcome to the Brain Game!');
-    $specification = getSpecification();
+    $specification = $fun;
     line($specification . "\n");
     $name = prompt('May I have your name?');
     line("Hello, %s!\n", $name);
