@@ -9,4 +9,5 @@ export PATH
 brain-even</br>
 brain-calc</br>
 brain-gcd</br>
-brain-progression
+brain-progression</br>
+brain-prime
