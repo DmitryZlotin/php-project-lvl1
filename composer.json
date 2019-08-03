@@ -1,5 +1,11 @@
 {
     "name": "dmitryzlotin/php-project-lvl1",
+    "description": "Trainig project BrainGames",
+    "keywords": [
+        "learning",
+        "hexlet"
+    ],
+    "type": "Training project",
     "license": "MIT",
     "bin": [
         "bin/brain-even",
