@@ -10,7 +10,6 @@ function getQuestion()
     $second = rand($min, $max);
     $quest = "{$first} {$second}";
     $correctAnswer = getDivisor($first, $second);
-    echo "!!!!!!!!!!!!!!!!!!!!{$correctAnswer}!!!!!!!!!!!!!\n";
     return ['question' => $quest, 'correctAnswer' => $correctAnswer];
 }
 
