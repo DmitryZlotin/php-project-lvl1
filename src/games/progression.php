@@ -5,7 +5,7 @@ namespace BrainGames\Games\progression;
 function getQuestion()
 {
     $min = 1;
-    $max = 10;
+    $max = 9;
     $multiplier = rand($min, $max);
     $prog = getProgression($multiplier);
     $answerIndex = rand($min, $max);
