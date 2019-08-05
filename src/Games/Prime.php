@@ -2,28 +2,47 @@
 
 namespace BrainGames\Games\Prime;
 
-function getQuestion()
+use BrainGames\Engine;
+
+function run($gamesCount)
+{
+    $name = Engine\startGame(getRegulations());
+    $flag = true;
+    for (; $gamesCount && $flag; $gamesCount--) {
+        [$task, $correctAnswer] = getTask();
+        $answer = Engine\getPlayerAnswer($task);
+        if ($answer != $correctAnswer) {
+            Engine\endGame($answer, $correctAnswer, $name);
+            $flag = false;
+        } else {
+            Engine\correct();
+        }
+    }
+    if ($flag) {
+        Engine\endGame($name);
+    }
+}
+
+function getTask()
 {
     $min = 1;
     $max = 100;
     $quest = rand($min, $max);
-    $correctAnswer = checkPrime($quest) ? 'no' : 'yes';
-    return ['question' => $quest, 'correctAnswer' => $correctAnswer];
+    $correctAnswer = checkPrime($quest) ? 'yes' : 'no';
+    return [$quest, $correctAnswer];
 }
 
-function getSpecification()
+function getRegulations()
 {
-    $specification = ['regulations' => "Answer \"yes\" if given number is prime. Otherwise answer \"no\".",
-                        'quests' => []];
-    for ($i = 0; $i < 3; $i++) {
-        $fun = getQuestion();
-        $specification['quests'][$i] = $fun;
-    }
-    return $specification;
+    return "Answer \"yes\" if given number is prime. Otherwise answer \"no\".";
 }
 
 function checkPrime($number)
 {
-    $primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97];
-    return !in_array($number, $primes);
+    for ($i = 2; $i < $number / $i; $i++) {
+        if ($number % $i === 0) {
+            return false;
+        }
+    }
+    return true;
 }
