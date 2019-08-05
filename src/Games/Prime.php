@@ -1,6 +1,6 @@
 <?php
 
-namespace BrainGames\Games\prime;
+namespace BrainGames\Games\Prime;
 
 function getQuestion()
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace BrainGames\engine;
+namespace BrainGames\Engine;
 
 use function BrainGames\games\even\getQuestion;
 use function BrainGames\games\even\getSpecification;

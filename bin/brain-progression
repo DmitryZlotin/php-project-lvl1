@@ -9,8 +9,8 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-use BrainGames\Games\progression;
-use function BrainGames\engine\startGame;
-$fun = progression\getSpecification();
+use BrainGames\Games\Progression;
+use function BrainGames\Engine\startGame;
+$fun = Progression\getSpecification();
 startGame($fun);
 ?>

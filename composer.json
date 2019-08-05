@@ -16,13 +16,12 @@
     ],
     "autoload": {
       "files": [
-        "src/cli.php",
-        "src/engine.php",
-        "src/games/even.php",
-        "src/games/calc.php",
-        "src/games/gcd.php",
-        "src/games/progression.php",
-        "src/games/prime.php"
+        "src/Engine.php",
+        "src/Games/Even.php",
+        "src/Games/Calc.php",
+        "src/Games/Gcd.php",
+        "src/Games/Progression.php",
+        "src/Games/Prime.php"
       ]
     },
     "scripts": {
@@ -35,7 +34,7 @@
         }
     ],
     "require": {
-	    "wp-cli/php-cli-tools":"v0.11.11"
+        "wp-cli/php-cli-tools":"v0.11.11"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "^3.4"

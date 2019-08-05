@@ -1,6 +1,6 @@
 <?php
 
-namespace BrainGames\Games\even;
+namespace BrainGames\Games\Even;
 
 function getQuestion()
 {

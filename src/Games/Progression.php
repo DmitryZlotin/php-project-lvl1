@@ -1,6 +1,6 @@
 <?php
 
-namespace BrainGames\Games\progression;
+namespace BrainGames\Games\Progression;
 
 function getQuestion()
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace BrainGames\Games\calc;
+namespace BrainGames\Games\Calc;
 
 function getQuestion()
 {
