@@ -11,7 +11,7 @@ function run($gamesCount)
     for (; $gamesCount && $flag; $gamesCount--) {
         [$task, $correctAnswer] = getTask();
         $answer = Engine\getPlayerAnswer($task);
-        if (!checkAnswer($answer, $correctAnswer)) {
+        if ($answer != $correctAnswer) {
             Engine\endGame($answer, $correctAnswer, $name);
             $flag = false;
         } else {
@@ -35,9 +35,4 @@ function getTask()
 function getRegulations()
 {
     return "Answer \"yes\" if number even otherwise answer \"no\".";
-}
-
-function checkAnswer($answer, $correctAnswer)
-{
-    return $answer === $correctAnswer;
 }

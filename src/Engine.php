@@ -2,8 +2,6 @@
 
 namespace BrainGames\Engine;
 
-use function BrainGames\games\even\getQuestion;
-use function BrainGames\games\even\getSpecification;
 use function \cli\line;
 use function \cli\prompt;
 
