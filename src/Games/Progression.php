@@ -2,7 +2,28 @@
 
 namespace BrainGames\Games\Progression;
 
-function getQuestion()
+use BrainGames\Engine;
+
+function run($gamesCount)
+{
+    $name = Engine\startGame(getRegulations());
+    $flag = true;
+    for (; $gamesCount && $flag; $gamesCount--) {
+        [$task, $correctAnswer] = getTask();
+        $answer = Engine\getPlayerAnswer($task);
+        if ($answer != $correctAnswer) {
+            Engine\endGame($answer, $correctAnswer, $name);
+            $flag = false;
+        } else {
+            Engine\correct();
+        }
+    }
+    if ($flag) {
+        Engine\endGame($name);
+    }
+}
+
+function getTask()
 {
     $min = 1;
     $max = 9;
@@ -12,19 +33,12 @@ function getQuestion()
     $correctAnswer = $prog[$answerIndex];
     $prog[$answerIndex] = '..';
     $quest = implode(' ', $prog);
-    return ['question' => $quest, 'correctAnswer' => $correctAnswer];
+    return [$quest, $correctAnswer];
 }
 
-function getSpecification()
+function getRegulations()
 {
-    $specification = ['regulations' => "Whath number is missing in the progression?",
-                        'quests' => []];
-    for ($i = 0; $i < 3; $i++) {
-        $fun = getQuestion();
-        $specification['quests'][$i] = $fun;
-    }
-
-    return $specification;
+    return "Whath number is missing in the progression?";
 }
 
 function getProgression($multiplier)

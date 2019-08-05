@@ -12,4 +12,3 @@ if (file_exists($autoloadPath1)) {
 use function BrainGames\Games\Gcd\run;
 
 run(3);
-?>
