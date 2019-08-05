@@ -8,7 +8,6 @@ function getQuestion()
     $max = 100;
     $quest = rand($min, $max);
     $correctAnswer = checkPrime($quest) ? 'no' : 'yes';
-    echo($correctAnswer);
     return ['question' => $quest, 'correctAnswer' => $correctAnswer];
 }
 
