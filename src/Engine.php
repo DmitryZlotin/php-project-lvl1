@@ -7,25 +7,13 @@ use function BrainGames\games\even\getSpecification;
 use function \cli\line;
 use function \cli\prompt;
 
-function startGame($fun)
+function startGame($regulations)
 {
     line('Welcome to the Brain Game!');
-    $specification = $fun;
-    line($specification['regulations'] . "\n");
+    line($regulations . "\n");
     $name = prompt('May I have your name?');
     line("Hello, %s!\n", $name);
-    for ($i = 0; $i < 3; $i++) {
-        $quest = $specification['quests'][$i];
-        $playerAnswer = getPlayerAnswer($quest['question']);
-        $correctAnswer = $quest['correctAnswer'];
-        if (!checkAnswer($correctAnswer, $playerAnswer)) {
-            line("\"{$playerAnswer}\" is wrong answer;(. Correct answer was \"{$correctAnswer}\"");
-            line("Let's try again, {$name}!");
-            exit("Fail answer");
-        }
-        line("Correct!");
-    }
-    line("Congratulations, {$name}!");
+    return $name;
 }
 
 function getPlayerAnswer($quest)
@@ -35,7 +23,19 @@ function getPlayerAnswer($quest)
     return $playerAnswer;
 }
 
-function checkAnswer($correct, $player)
+function endGame(...$arguments)
 {
-    return $correct == $player ? true : false;
+    if (count($arguments) > 1) {
+        [$answer, $correctAnswer, $name] = $arguments;
+        line("{$answer} is wrong answer ;(. Correct answer was {$correctAnswer}.");
+        line("Let's try again, {$name}");
+    } else {
+        [$name] = $arguments;
+        line("Congratulations, {$name}");
+    }
+}
+
+function correct()
+{
+    line("Correct!");
 }

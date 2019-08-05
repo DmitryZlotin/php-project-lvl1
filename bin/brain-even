@@ -9,7 +9,6 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-use BrainGames\Games\Even;
-use function BrainGames\Engine\startGame;
-$fun = Even\getSpecification();
-startGame($fun);
+use function BrainGames\Games\Even\run;
+
+run(3);
