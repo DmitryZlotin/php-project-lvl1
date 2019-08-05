@@ -5,7 +5,7 @@
         "learning",
         "hexlet"
     ],
-    "type": "Training project",
+    "type": "TrainingProject",
     "license": "MIT",
     "bin": [
         "bin/brain-even",
