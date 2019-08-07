@@ -2,41 +2,21 @@
 
 namespace BrainGames\Games\Calc;
 
-use BrainGames\Engine;
+use function BrainGames\Engine\startGame;
 
-function run($gamesCount)
+function run()
 {
-    $name = Engine\startGame(getRegulations());
-    $flag = true;
-    for (; $gamesCount && $flag; $gamesCount--) {
-        [$task, $correctAnswer] = getTask();
-        $answer = Engine\getPlayerAnswer($task);
-        if ($answer != $correctAnswer) {
-            Engine\endGame($answer, $correctAnswer, $name);
-            $flag = false;
-        } else {
-            Engine\correct();
-        }
-    }
-    if ($flag) {
-        Engine\endGame($name);
-    }
-}
-
-function getTask()
-{
-    $min = 1;
-    $max = 100;
-    $first = rand($min, $max);
-    $second = rand($min, $max);
-    [$sign, $correctAnswer] = getAnswer(rand(0, 2), $first, $second);
-    $quest = "{$first} {$sign} {$second}";
-    return [$quest, $correctAnswer];
-}
-
-function getRegulations()
-{
-    return "What is the result of the expression?";
+    $regulations = "What is the result of the expression?";
+    $getTask = function () {
+        $min = 1;
+        $max = 100;
+        $first = rand($min, $max);
+        $second = rand($min, $max);
+        [$sign, $correctAnswer] = getAnswer(rand(0, 2), $first, $second);
+        $quest = "{$first} {$sign} {$second}";
+        return [$quest, $correctAnswer];
+    };
+    startGame($regulations, $getTask);
 }
 
 function getAnswer($flag, $first, $second)

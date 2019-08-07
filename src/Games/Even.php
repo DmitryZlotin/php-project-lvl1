@@ -2,37 +2,17 @@
 
 namespace BrainGames\Games\Even;
 
-use BrainGames\Engine;
+use function BrainGames\Engine\startGame;
 
-function run($gamesCount)
+function run()
 {
-    $name = Engine\startGame(getRegulations());
-    $flag = true;
-    for (; $gamesCount && $flag; $gamesCount--) {
-        [$task, $correctAnswer] = getTask();
-        $answer = Engine\getPlayerAnswer($task);
-        if ($answer != $correctAnswer) {
-            Engine\endGame($answer, $correctAnswer, $name);
-            $flag = false;
-        } else {
-            Engine\correct();
-        }
-    }
-    if ($flag) {
-        Engine\endGame($name);
-    }
-}
-
-function getTask()
-{
-    $min = 1;
-    $max = 100;
-    $quest = rand($min, $max);
-    $correctAnswer = $quest % 2 ? 'no' : 'yes';
-    return [$quest, $correctAnswer];
-}
-
-function getRegulations()
-{
-    return "Answer \"yes\" if number even otherwise answer \"no\".";
+    $regulations = "Answer \"yes\" if number even otherwise answer \"no\".";
+    $getTask = function () {
+        $min = 1;
+        $max = 100;
+        $quest = rand($min, $max);
+        $correctAnswer = $quest % 2 ? 'no' : 'yes';
+        return [$quest, $correctAnswer];
+    };
+    startGame($regulations, $getTask);
 }

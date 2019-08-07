@@ -2,43 +2,23 @@
 
 namespace BrainGames\Games\Progression;
 
-use BrainGames\Engine;
+use function BrainGames\Engine\startGame;
 
-function run($gamesCount)
+function run()
 {
-    $name = Engine\startGame(getRegulations());
-    $flag = true;
-    for (; $gamesCount && $flag; $gamesCount--) {
-        [$task, $correctAnswer] = getTask();
-        $answer = Engine\getPlayerAnswer($task);
-        if ($answer != $correctAnswer) {
-            Engine\endGame($answer, $correctAnswer, $name);
-            $flag = false;
-        } else {
-            Engine\correct();
-        }
-    }
-    if ($flag) {
-        Engine\endGame($name);
-    }
-}
-
-function getTask()
-{
-    $min = 1;
-    $max = 9;
-    $multiplier = rand($min, $max);
-    $prog = getProgression($multiplier);
-    $answerIndex = rand($min, $max);
-    $correctAnswer = $prog[$answerIndex];
-    $prog[$answerIndex] = '..';
-    $quest = implode(' ', $prog);
-    return [$quest, $correctAnswer];
-}
-
-function getRegulations()
-{
-    return "Whath number is missing in the progression?";
+    $regulations = "Whath number is missing in the progression?";
+    $getTask = function () {
+        $min = 1;
+        $max = 9;
+        $multiplier = rand($min, $max);
+        $prog = getProgression($multiplier);
+        $answerIndex = rand($min, $max);
+        $correctAnswer = $prog[$answerIndex];
+        $prog[$answerIndex] = '..';
+        $quest = implode(' ', $prog);
+        return [$quest, $correctAnswer];
+    };
+    startGame($regulations, $getTask);
 }
 
 function getProgression($multiplier)
