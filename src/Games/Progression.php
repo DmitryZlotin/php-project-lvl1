@@ -4,7 +4,7 @@ namespace BrainGames\Games\Progression;
 
 use function BrainGames\Engine\startGame;
 
-const MIN_STEP =1;
+const MIN_STEP = 1;
 const MAX_STEP = 9;
 const LENGHT_PROGRESSION = 10;
 function run()

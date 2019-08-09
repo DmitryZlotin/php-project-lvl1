@@ -4,7 +4,7 @@ namespace BrainGames\Games\Prime;
 
 use function BrainGames\Engine\startGame;
 
-const MIN =1;
+const MIN = 1;
 const MAX = 100;
 function run()
 {
