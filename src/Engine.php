@@ -7,10 +7,10 @@ use function \cli\prompt;
 
 const COUNT_GAMES = 3;
 
-function startGame($regulations, $getTask)
+function game($description, $getGameAttributs)
 {
     line("Welcome to the Brain Game!\n");
-    line($regulations . "\n");
+    line($description . "\n");
     $name = prompt('May I have your name?');
     line("Hello, %s!\n", $name);
     $count = 0;

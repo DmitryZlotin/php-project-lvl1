@@ -4,19 +4,20 @@ namespace BrainGames\Games\Gcd;
 
 use function BrainGames\Engine\startGame;
 
+const MIN = 1;
+const MAX = 100;
+
 function run()
 {
-    $regulations = "Find the greatest common divisor of given numbers";
-    $getTask = function () {
-        $min = 1;
-        $max = 100;
-        $first = rand($min, $max);
-        $second = rand($min, $max);
-        $quest = "{$first} {$second}";
+    $description = 'Find the greatest common divisor of given numbers';
+    $getGameAttributs = function () {
+        $first = rand(MIN, MIA);
+        $second = rand(MIN, MAX);
+        $question = "{$first} {$second}";
         $correctAnswer = getDivisor($first, $second);
-        return [$quest, $correctAnswer];
+        return [$question, $correctAnswer];
     };
-    startGame($regulations, $getTask);
+    game($description, $getGameAttributs);
 }
 
 function getDivisor($first, $second)
