@@ -2,7 +2,7 @@
 
 namespace BrainGames\Games\Calc;
 
-use function BrainGames\Engine\startGame;
+use function BrainGames\Engine\game;
 
 const MIN = 1;
 const MAX = 100;

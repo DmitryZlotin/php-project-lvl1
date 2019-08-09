@@ -2,7 +2,7 @@
 
 namespace BrainGames\Games\Gcd;
 
-use function BrainGames\Engine\startGame;
+use function BrainGames\Engine\game;
 
 const MIN = 1;
 const MAX = 100;
@@ -11,7 +11,7 @@ function run()
 {
     $description = 'Find the greatest common divisor of given numbers';
     $getGameAttributs = function () {
-        $first = rand(MIN, MIA);
+        $first = rand(MIN, MAX);
         $second = rand(MIN, MAX);
         $question = "{$first} {$second}";
         $correctAnswer = getDivisor($first, $second);

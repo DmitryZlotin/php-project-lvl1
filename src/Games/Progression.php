@@ -2,7 +2,7 @@
 
 namespace BrainGames\Games\Progression;
 
-use function BrainGames\Engine\startGame;
+use function BrainGames\Engine\game;
 
 const MIN_STEP = 1;
 const MAX_STEP = 9;
