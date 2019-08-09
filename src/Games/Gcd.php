@@ -6,10 +6,10 @@ use function BrainGames\Engine\game;
 
 const MIN = 1;
 const MAX = 100;
+const DESCRIPTION = 'Find the greatest common divisor of given numbers';
 
 function run()
 {
-    $description = 'Find the greatest common divisor of given numbers';
     $getGameAttributs = function () {
         $first = rand(MIN, MAX);
         $second = rand(MIN, MAX);
@@ -17,7 +17,7 @@ function run()
         $correctAnswer = getDivisor($first, $second);
         return [$question, $correctAnswer];
     };
-    game($description, $getGameAttributs);
+    game(DESCRIPTION, $getGameAttributs);
 }
 
 function getDivisor($first, $second)

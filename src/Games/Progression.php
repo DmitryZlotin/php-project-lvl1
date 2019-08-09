@@ -7,9 +7,9 @@ use function BrainGames\Engine\game;
 const MIN_STEP = 1;
 const MAX_STEP = 9;
 const LENGHT_PROGRESSION = 10;
+const DESCRIPTION = 'Whath number is missing in the progression?';
 function run()
 {
-    $description = 'Whath number is missing in the progression?';
     $getGameAttributs = function () {
         $multiplier = rand(MIN_STEP, MAX_STEP);
         $prog = getProgression($multiplier);
@@ -19,7 +19,7 @@ function run()
         $question = implode(' ', $prog);
         return [$question, $correctAnswer];
     };
-    game($description, $getGameAttributs);
+    game(DESCRIPTION, $getGameAttributs);
 }
 
 function getProgression($multiplier)

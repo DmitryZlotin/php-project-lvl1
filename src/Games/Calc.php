@@ -6,10 +6,9 @@ use function BrainGames\Engine\game;
 
 const MIN = 1;
 const MAX = 100;
-
+const DESCRIPTION = 'What is the result of the expression?';
 function run()
 {
-    $description = 'What is the result of the expression?';
     $getGameAttributs = function () {
         $first = rand(MIN, MAX);
         $second = rand(MIN, MAX);
@@ -29,5 +28,5 @@ function run()
         $question = "{$first} {$sign} {$second}";
         return [$question, $correctAnswer];
     };
-    game($description, $getGameAttributs);
+    game(DESCRIPTION, $getGameAttributs);
 }
