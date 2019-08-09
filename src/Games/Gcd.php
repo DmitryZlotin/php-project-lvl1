@@ -22,10 +22,13 @@ function run()
 
 function getDivisor($first, $second)
 {
-    for ($i = 1; $i < $first && $i < $second; $i++) {
+    if ($first == 1 || $second == 1) {
+        return 1;
+    }
+    for ($i = 2; $i <= $first / $i && $i <= $second / $i; $i++) {
         if ($first % $i == 0 && $second % $i == 0) {
-            $result = $i;
+            return $i * getDivisor($first / $i, $second / $i);
         }
     }
-    return $result;
+    return 1;
 }
