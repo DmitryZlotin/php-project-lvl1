@@ -6,27 +6,31 @@ use function BrainGames\Engine\game;
 
 const MIN_STEP = 1;
 const MAX_STEP = 9;
-const LENGHT_PROGRESSION = 10;
+const MIN_START = 0;
+const MAX_START = 100;
+const PROGRESSION_LENGHT = 10;
 const DESCRIPTION = 'Whath number is missing in the progression?';
+
 function run()
 {
     $getGameAttributs = function () {
-        $multiplier = rand(MIN_STEP, MAX_STEP);
-        $prog = getProgression($multiplier);
-        $answerIndex = rand(0, LENGHT_PROGRESSION - 1);
-        $correctAnswer = $prog[$answerIndex];
+        $step = rand(MIN_STEP, MAX_STEP);
+        $start = rand(MIN_START, MAX_START);
+        $progression = getProgression($start, $step);
+        $answerIndex = rand(0, PROGRESSION_LENGHT - 1);
+        $correctAnswer = $progression[$answerIndex];
         $prog[$answerIndex] = '..';
-        $question = implode(' ', $prog);
+        $question = implode(' ', $progression);
         return [$question, $correctAnswer];
     };
     game(DESCRIPTION, $getGameAttributs);
 }
 
-function getProgression($multiplier)
+function getProgression($start, $step)
 {
     $result = [];
-    for ($i = 0; $i < LENGHT_PROGRESSION; $i++) {
-        $result[] = $i * $multiplier;
+    for ($i = 0; $i < PROGRESSION_LENGHT; $i++) {
+        $result[] = $start + $step * $i;
     }
     return $result;
 }
