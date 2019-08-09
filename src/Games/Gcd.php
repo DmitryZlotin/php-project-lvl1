@@ -22,7 +22,6 @@ function run()
 
 function getDivisor($first, $second)
 {
-    $result = 0;
     for ($i = 1; $i < $first && $i < $second; $i++) {
         if ($first % $i == 0 && $second % $i == 0) {
             $result = $i;

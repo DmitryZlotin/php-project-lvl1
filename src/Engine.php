@@ -14,16 +14,15 @@ function game($description, $getGameAttributs)
     $name = prompt('May I have your name?');
     line("Hello, %s!\n", $name);
     $count = 0;
-    while ($count < COUNT_GAMES) {
-        [$quest, $correctAnswer] = $getTask();
-        $answer = getPlayerAnswer($quest);
+    for ($count = 0; $count < COUNT_GAMES; $count++) {
+        [$question, $correctAnswer] = $getGameAttributs();
+        $answer = getPlayerAnswer($question);
         if ($answer != $correctAnswer) {
             line("{$answer} is wrong answer ;(. Correct answer was {$correctAnswer}.");
             line("Let's try again, {$name}");
             return;
         }
         line("Correct!");
-        $count++;
     }
     line("Congratulations, {$name}!");
 }

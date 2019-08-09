@@ -4,19 +4,19 @@ namespace BrainGames\Games\Progression;
 
 use function BrainGames\Engine\startGame;
 
-const MIN =1;
-const MAX = 9;
+const MIN_STEP =1;
+const MAX_STEP = 9;
 const LENGHT_PROGRESSION = 10;
 function run()
 {
     $description = 'Whath number is missing in the progression?';
     $getGameAttributs = function () {
-        $multiplier = rand(MIN, MAX);
+        $multiplier = rand(MIN_STEP, MAX_STEP);
         $prog = getProgression($multiplier);
-        $answerIndex = rand($min, $max);
+        $answerIndex = rand(0, LENGHT_PROGRESSION - 1);
         $correctAnswer = $prog[$answerIndex];
         $prog[$answerIndex] = '..';
-        $quest = implode(' ', $prog);
+        $question = implode(' ', $prog);
         return [$question, $correctAnswer];
     };
     game($description, $getGameAttributs);
